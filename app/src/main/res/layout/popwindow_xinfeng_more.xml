@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/xinfeng_more_pop_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/window_xinfeng_more_pm25_tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:gravity="center"
+                android:textColor="@color/xinfeng_more_txt_color"
+                android:textSize="16sp"
+                android:text="关闭pm2.5检测"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_modify_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_modify_name"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_remove_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_remove"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_shuoming_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_shuoming"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_help_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_help"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_contact_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_contact"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_more_cancle_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_cancle"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+</RelativeLayout>

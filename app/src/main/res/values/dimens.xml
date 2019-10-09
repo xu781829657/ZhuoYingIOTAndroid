@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--标题高度-->
+    <dimen name="title_height">54dp</dimen>
+    <dimen name="personal_module_page_title_txtsize">18sp</dimen>
+</resources>

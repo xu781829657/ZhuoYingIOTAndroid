@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/xinfeng_model_pop_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/window_xinfeng_model_sleep"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_model_sleep"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_model_natural"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_model_natural"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_model_eff"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_model_eff"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_model_com"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_model_com"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray" />
+
+        <TextView
+            android:id="@+id/window_xinfeng_model_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center"
+            android:text="@string/xinfeng_more_cancle"
+            android:textColor="@color/xinfeng_more_txt_color"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_head2" />
+
+    <!--显示当前登录账号的手机号-->
+    <TextView
+        android:id="@+id/tv_reset_pwd_phone"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/shape_white_small_corner"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/main_black_color"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="14dp"
+        android:background="@drawable/shape_white_small_corner"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <EditText
+            android:id="@+id/edt_reset_pwd_message_code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:hint="@string/txt_register_code_hint"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/main_black_color"
+            android:textColorHint="@color/content_black_color"
+            android:textSize="16sp"
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/btn_reset_pwd_send_code"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/shape_blue_small_corner"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/txt_send_message"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_reset_pwd_next"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_blue_big_corner"
+        android:text="@string/txt_next"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

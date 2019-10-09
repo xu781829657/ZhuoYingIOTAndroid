@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_head2" />
+    <!--正文-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:background="@drawable/shape_white_small_corner"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/edt_feedback_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="left"
+            android:hint="@string/txt_feedback_content_hint"
+            android:lineSpacingExtra="4dp"
+            android:maxLength="300"
+            android:minHeight="180dp"
+            android:textColor="@color/main_black_color"
+            android:textColorHint="@color/content_black_color"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_feedback_word_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/content_black_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_feedback_xie_line"
+                android:textColor="@color/content_black_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_feedback_total_count"
+                android:textColor="@color/content_black_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+    <!--图片-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/shape_white_small_corner"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_feedback_pic_hint"
+            android:textColor="@color/main_black_color"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:id="@+id/img_feedback_pic1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/feedback_add_pic" />
+
+            <ImageView
+                android:id="@+id/img_feedback_pic2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/feedback_add_pic"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/img_feedback_pic3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/feedback_add_pic"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/img_feedback_pic4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@mipmap/feedback_add_pic"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_feedback_commit"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_blue_big_corner"
+        android:text="@string/txt_commit"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

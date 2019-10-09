@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coldfanAindex"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ouzhongiot.ozapp.activity.coldfanAindex">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.ouzhongiot.ozapp.others.DampView
+            android:id="@+id/dampview1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+                android:orientation="vertical">
+
+                <!--此处必须设置imageview的scaleType为centerCrop,当然在代码中设置也可以-->
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:onClick="onImgClick"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/indexbackground2" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-45dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_coldfanAindex_wether"
+                        android:layout_width="35dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:onClick="onPhotoClick"
+                        android:src="@mipmap/weather" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_coldfanaindex_quality"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="空气质量  良"
+                            android:textColor="#ffffff"
+                            android:textSize="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_coldfanaindex_temperature"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom"
+                                android:text="温度  29℃"
+                                android:textColor="#ffffff"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:layout_width="1dp"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="15dp"
+                                android:background="#ffffff" />
+
+                            <TextView
+                                android:id="@+id/tv_coldfanaindex_humidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:gravity="bottom"
+                                android:text="湿度  29%"
+                                android:textColor="#ffffff"
+                                android:textSize="14dp" />
+
+                            <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="5dp"-->
+                            <!--android:layout_marginTop="-10dp"-->
+                            <!--android:text="29"-->
+                            <!--android:gravity="bottom"-->
+                            <!--android:textColor="#ffffff"-->
+                            <!--android:textSize="17dp" />-->
+
+                            <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="fill_parent"-->
+
+                            <!--android:text="℃"-->
+                            <!--android:gravity="bottom"-->
+                            <!--android:textColor="#ffffff"-->
+                            <!--android:textSize="14dp" />-->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_coldfanaindex_dizhi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="10dp"
+                            android:gravity="bottom"
+                            android:textColor="#ffffff"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#ffffff"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_coldfanaindex_fencheng"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="0.00"
+                                    android:textColor="#000000"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:gravity="center"
+                                    android:text="mg"
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@color/green"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="已过滤粉尘"
+                                android:textColor="@color/gray"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="1px"
+                            android:layout_height="60dp"
+                            android:background="#000000" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_coldfanaindex_leijishijian"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="0.00"
+                                    android:textColor="#000000"
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:gravity="center"
+                                    android:text="小时"
+                                    android:textColor="#000000"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@color/green"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="累计运行时间"
+                                android:textColor="@color/gray"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="120dp"
+                        android:background="@mipmap/indexbackgroundzhong0"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="75dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/leijijiangwen"
+                                android:gravity="center"
+                                android:text="累计降温"
+                                android:textColor="#ffffff"
+                                android:textSize="15dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_coldfanaindex_jiangwen"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="0.00"
+                                    android:textColor="@color/green"
+                                    android:textSize="50dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:text="℃"
+                                    android:textColor="#000000"
+                                    android:textSize="20dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_coldfanaindex_jidan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="可以煮熟20个鸡蛋"
+                                android:textColor="#585858"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="#00612222"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="#ffffff"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/tv_bjshoumin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="left|center"
+                                    android:layout_marginLeft="30dp"
+                                    android:src="@mipmap/bjshouming" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="冰晶寿命"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="30dp"
+                                    android:src="@mipmap/next" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_bjshoumin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="95dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="1px"
+                                    android:background="@color/gray" />
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+                                        <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="60dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2" />
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <TextView
+                                                        android:id="@+id/tv_coldfanaindex_bingjingshouming"
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:gravity="center"
+                                                        android:text="2400"
+                                                        android:textColor="@color/green"
+                                                        android:textSize="24dp" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="2dp"
+                                                        android:gravity="center"
+                                                        android:text="小时"
+                                                        android:textColor="@color/green"
+                                                        android:textSize="12dp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:layout_width="100dp"
+                                                    android:layout_height="1dp"
+                                                    android:layout_marginTop="2dp"
+                                                    android:background="@color/green"
+                                                    android:gravity="center" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="4dp"
+                                                    android:gravity="center"
+                                                    android:text="剩余冰晶寿命"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="14dp" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2" />
+                                    </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom"
+                                            android:layout_marginTop="5dp"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+                                            <FrameLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content">
+                                            <TextView
+                                                android:layout_width="320dp"
+                                                android:layout_height="12dp"
+                                                android:background="#d4d4d4"/>
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+
+                                                <TextView
+                                                    android:id="@+id/tv_coldfanaindex_bingjingxiantiao"
+                                                    android:layout_width="320dp"
+                                                    android:layout_height="12dp"
+                                                    android:background="@color/green"/></LinearLayout>
+                                            </FrameLayout>
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"/>
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                    <TextView
+                        android:id="@+id/tv_coldfanaindex_zhuangtaifuwei2"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/zhuangtaifuwei"
+                                        android:gravity="center"
+                                        android:text="复位"
+                                        android:textColor="#ffffff"
+                                        android:textSize="16dp" />
+                                </FrameLayout>
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="#ffffff"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/tv_swzhuangtai"
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="left|center"
+                                    android:layout_marginLeft="30dp"
+                                    android:src="@mipmap/swzhuangtai" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="水位状态"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="30dp"
+                                    android:src="@mipmap/next" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_swzhuangtai"
+                                android:layout_width="fill_parent"
+                                android:layout_height="95dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="1px"
+                                    android:background="@color/gray" />
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1" />
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:layout_weight="2"
+                                            android:gravity="center"
+                                            android:orientation="horizontal">
+
+
+                                            <ImageView
+                                                android:id="@+id/iv_coldfanaindex_shuiwei"
+                                                android:layout_width="100dp"
+                                                android:layout_height="90dp"
+                                                android:background="@mipmap/shuiwei1" />
+
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+
+                                            android:orientation="horizontal">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="fill_parent"
+                                                android:layout_weight="1"
+                                                android:gravity="center"
+                                                android:orientation="vertical">
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <TextView
+                                                        android:id="@+id/tv_coldfanaindex_shengyushuiwei"
+                                                        android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:gravity="center"
+                                                        android:text="720"
+                                                        android:textColor="@color/green"
+                                                        android:textSize="24dp" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="2dp"
+                                                        android:gravity="center"
+                                                        android:text="分钟"
+                                                        android:textColor="@color/green"
+                                                        android:textSize="12dp" />
+                                                </LinearLayout>
+
+                                                <TextView
+                                                    android:layout_width="100dp"
+                                                    android:layout_height="1dp"
+                                                    android:layout_marginTop="2dp"
+                                                    android:background="@color/green"
+                                                    android:gravity="center" />
+
+                                                <TextView
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="4dp"
+                                                    android:gravity="center"
+                                                    android:text="剩余水位状态"
+                                                    android:textColor="@color/gray"
+                                                    android:textSize="14dp" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="2" />
+                                    </LinearLayout>
+
+                                    <TextView
+                        android:id="@+id/tv_coldfanaindex_zhuangtaifuwei1"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/zhuangtaifuwei"
+                                        android:gravity="center"
+                                        android:text="复位"
+                                        android:textColor="#ffffff"
+                                        android:textSize="16dp" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="#ffffff"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/tv_lwjiedu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="left|center"
+                                    android:layout_marginLeft="30dp"
+                                    android:src="@mipmap/lwjiedu" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:text="水帘洁度"
+                                    android:textSize="14dp" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="30dp"
+                                    android:src="@mipmap/next" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_lwjiedu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="95dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="1px"
+                                    android:background="@color/gray" />
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    >
+                              <LinearLayout
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent"
+                                  android:gravity="center"
+                                  android:layout_marginTop="25dp"
+                                  android:orientation="horizontal">
+                                  <TextView
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"/>
+                                  <TableLayout
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="6">
+
+                                      <TableRow>
+                                          <LinearLayout android:layout_height="wrap_content"
+                                              android:layout_width="wrap_content"
+                                              android:orientation="horizontal"
+                                              android:layout_weight="1"
+                                              android:gravity="center">
+                                          <ImageView
+                                              android:id="@+id/iv_coldfanaindex_jieduzhizhen1"
+                                              android:layout_width="20dp"
+                                              android:layout_height="20dp"
+                                              android:gravity="center"
+                                              android:visibility="invisible"
+                                              android:src = "@mipmap/jieduzhizhen"
+                                              />
+                                          </LinearLayout>
+                                          <LinearLayout android:layout_height="wrap_content"
+                                              android:layout_width="wrap_content"
+                                              android:orientation="horizontal"
+                                              android:layout_weight="1"
+                                              android:gravity="center">
+                                              <ImageView
+                                                  android:id="@+id/iv_coldfanaindex_jieduzhizhen2"
+                                                  android:layout_width="20dp"
+                                                  android:layout_height="20dp"
+                                                  android:gravity="center"
+                                                  android:visibility="invisible"
+                                                  android:src = "@mipmap/jieduzhizhen"
+                                                  />
+                                          </LinearLayout>
+                                          <LinearLayout android:layout_height="wrap_content"
+                                              android:layout_width="wrap_content"
+                                              android:orientation="horizontal"
+                                              android:layout_weight="1"
+                                              android:gravity="center">
+                                              <ImageView
+                                                  android:id="@+id/iv_coldfanaindex_jieduzhizhen3"
+                                                  android:layout_width="20dp"
+                                                  android:layout_height="20dp"
+                                                  android:gravity="center"
+                                                  android:visibility="invisible"
+                                                  android:src = "@mipmap/jieduzhizhen"
+                                                  />
+                                          </LinearLayout>
+                                          <LinearLayout android:layout_height="wrap_content"
+                                              android:layout_width="wrap_content"
+                                              android:orientation="horizontal"
+                                              android:layout_weight="1"
+                                              android:gravity="center">
+                                              <ImageView
+                                                  android:id="@+id/iv_coldfanaindex_jieduzhizhen4"
+                                                  android:layout_width="20dp"
+                                                  android:layout_height="20dp"
+                                                  android:gravity="center"
+                                                  android:src = "@mipmap/jieduzhizhen"
+                                                  />
+                                          </LinearLayout>
+                                      </TableRow>
+
+                                      <TableRow
+                                          android:layout_marginTop="2dp"
+                                          >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="8dp"
+                                            android:gravity="center"
+                                            android:background="#ff5e12"
+                                            android:layout_weight="1"
+                                           />
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="8dp"
+                                              android:gravity="center"
+                                              android:background="#ffd61e"
+                                              android:layout_weight="1"
+                                              />
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="8dp"
+                                              android:gravity="center"
+                                              android:background="#aae11f"
+                                              android:layout_weight="1"
+                                              />
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="8dp"
+                                              android:gravity="center"
+                                              android:background="#1ad727"
+                                              android:layout_weight="1"
+                                              />
+                                      </TableRow>
+                                      <TableRow
+                                          android:layout_marginTop="5dp">
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:gravity="center"
+                                              android:layout_weight="1"
+                                              android:text="重度污染"/>
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:gravity="center"
+                                              android:layout_weight="1"
+                                              android:text="中度污染"/>
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:gravity="center"
+                                              android:layout_weight="1"
+                                              android:text="轻微粉尘"/>
+                                          <TextView
+                                              android:layout_width="wrap_content"
+                                              android:gravity="center"
+                                              android:layout_height="wrap_content"
+                                              android:layout_weight="1"
+                                              android:text="干净清洁"/>
+                                      </TableRow>
+                                  </TableLayout>
+                                  <TextView
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_weight="1"/>
+
+                              </LinearLayout>
+                                    <TextView
+                                        android:id="@+id/tv_coldfanaindex_zhuangtaifuwei3"
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/zhuangtaifuwei"
+                                    android:gravity="center"
+                                    android:text="复位"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16dp" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="56dp"
+                            android:background="#00ffffff"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="fill_parent"
+                                android:layout_height="44dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.ouzhongiot.ozapp.others.DampView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_coldfanAindex_wenxintishi"
+                android:layout_width="0dp"
+                android:layout_height="26dp"
+                android:layout_weight="6"
+                android:background="@drawable/wenxintishi"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="今天气温很高，适合穿短袖，注意防晒和避暑,祝您有一个愉快的周末"
+                android:textColor="#ffffff"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_coldfanAindex_shezhi"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:src="@mipmap/set" />
+        </LinearLayout>
+
+        <com.ouzhongiot.ozapp.others.CircleImageView
+            android:id="@+id/iv_coldfanAindex_touxiang"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="31dp"
+            android:src="@mipmap/test" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/ll_coldfanindex_kaiguan"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="12"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_coldfanaindex_kaiguan0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/indexbuttun"
+                        android:textColor="#ffffff" />
+
+                    <LinearLayout
+
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_coldfanaindex_kaiguan"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/close" />
+
+                        <TextView
+                            android:id="@+id/tv_coldfanaindex_kaiguan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center"
+                            android:text="关闭"
+                            android:textColor="#ffffff"
+                            android:textSize="18dp" />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

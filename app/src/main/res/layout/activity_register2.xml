@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_head2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="40dp">
+
+        <EditText
+            android:id="@+id/edt_register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/shape_register_edt"
+            android:hint="@string/txt_register_account_hint"
+            android:inputType="number"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/three_txt_color"
+            android:textColorHint="@color/content_black_color"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edt_register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/shape_register_edt"
+            android:hint="@string/txt_register_pwd_hint"
+            android:inputType="textPassword"
+            android:textColor="@color/three_txt_color"
+            android:selectAllOnFocus="true"
+            android:textSize="16sp"
+            android:textColorHint="@color/content_black_color" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edt_register_sys_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_register_edt"
+                android:hint="@string/txt_register_code_hint"
+                android:textColor="@color/three_txt_color"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:textColorHint="@color/content_black_color"
+                android:textSize="16sp" />
+
+            <com.ouzhongiot.ozapp.check.CheckView
+                android:id="@+id/view_register_sys_code"
+                android:layout_width="70dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/btn_login"
+                android:text="@string/txt_immediately_register"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:text="@string/register_remind_txt"
+            android:textColor="@color/six_txt_color"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_register_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:text="@string/register_agreement_txt"
+                android:textColor="@color/main_black_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:text="@string/register_and_txt"
+                android:textColor="@color/six_txt_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_register_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:text="@string/register_policy_txt"
+                android:textColor="@color/main_black_color"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,281 @@
+<resources>
+    <string name="app_name">联侠</string>
+    <string name="register">点击"立即注册"，即表示你同意遵守欧众</string>
+    <string name="dingshikongzhipeiwangmoshi">开机长按电器定时按钮</string>
+    <string name="kaiguankongzhipeiwangmoshi">开机长按电器开关按钮</string>
+    <string name="wifianjianpeiwangmoshi">开机长按WIFI按钮</string>
+    <string name="wifishansuo"> 将WIFI指示灯调节到快速闪烁状态</string>
+    <string name="dianyuanshansuo"> 将电源指示灯调节到快速闪烁状态</string>
+    <string name="dianyuanshansuo2">请开机长按功能按键3秒</string>
+    <string name="dianyuanshansuo3">听到"滴"的声音后指示灯闪烁, 进入配网模式</string>
+    <string name="dianyuanshansuo4">(wifi功能按键请查看说明书)</string>
+    <string name="pic_btn">获取图片</string>
+    <string name="dialog_title">设置头像</string>
+    <string name="dialog_p_btn">相册</string>
+    <string name="dialog_n_btn">拍照</string>
+    <string name="loading">小的正在努力加载中...</string>
+    <string name="aircleanwaichumoshi">当您需要外出时，可以使用外出模式的默认值，也可以以自己安排开启和关闭的时间，在您外出的时候，空气净化器为您营造出良好的生活环境。</string>
+    <string name="aircleanzhoumomoshi">在周末的时候，使用周末模式的默认模式，愉快和好心情伴随着呼吸，享受一个清新的周末。</string>
+    <string name="aircleanzhinengmoshi">开启智能模式，空气净化器会根据室内空气质量情况自动调节工作时间，让空气长久保持健康状态。我很机智，您很健康！</string>
+    <string name="aircleanzidingyimoshi">自定义模式下，您可以自由地安排开启和关闭空气净化器，针对您个人的作息做出合理的安排，享受每一个呼吸。</string>
+    <string name="dryeryinerhuli">婴儿护理采用节能模式，烘干温度更加柔和舒适，默认开启UV杀菌和负离子功能，保护婴幼儿衣物清洁、健康。</string>
+    <string name="dryerjiuyichushi">旧衣除湿采用节能模式，针对旧衣安排合理的烘干时间，为您节省时间的同时也更加省电。</string>
+    <string name="dryerzidingyi">自定义模式您可以按照自己的要求安排烘干时长，更加自由便捷。</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--新风空气净化器-->
+    <string name="xinfeng_back_txt">返回</string>
+    <string name="xinfeng_title_txt">新风空气净化器</string>
+    <string name="xinfeng_switch_on_txt">开启</string>
+    <string name="xinfeng_switch_off_txt">关闭</string>
+    <string name="xinfeng_PM_txt">PM2.5</string>
+    <string name="xinfeng_temp_txt">室内温度</string>
+    <string name="xinfeng_humi_txt">室内湿度</string>
+    <string name="xinfeng_CO2_txt">室内CO2</string>
+    <string name="xinfeng_form_txt">VOC</string>
+    <string name="xinfeng_auto_txt">智能运行</string>
+    <string name="xinfeng_hand_txt">手动模式</string>
+    <string name="xinfeng_LED_txt">LED彩灯</string>
+    <string name="xinfeng_ion_txt">负离子</string>ion
+    <string name="xinfeng_wind_txt">风速</string>
+    <string name="xinfeng_model_txt">模式</string>
+    <string name="xinfeng_time_task_txt">定时任务</string>
+    <string name="xinfeng_more_modify_name">修改设备名称</string>
+    <string name="xinfeng_more_remove">移除设备</string>
+    <string name="xinfeng_more_shuoming">产品说明</string>
+    <string name="xinfeng_more_help">使用帮助</string>
+    <string name="xinfeng_more_contact">联系我们</string>
+    <string name="xinfeng_more_cancle">取消</string>
+    <string name="xinfeng_model_sleep">睡眠模式</string>
+    <string name="xinfeng_model_natural">节能模式</string>
+    <string name="xinfeng_model_eff">高效模式</string>
+    <string name="xinfeng_model_com">舒适模式</string>
+    <string name="delete_device_remind_tv">删除设备后，之前的数据将被清空</string>
+    <string name="delete_tv">删除</string>
+    <string name="xinfeng_led_dialog_title">LED彩灯</string>
+    <string name="xinfeng_led_red">红</string>
+    <string name="xinfeng_led_green">绿</string>
+    <string name="xinfeng_led_blue">蓝</string>
+    <string name="xinfeng_led_yellow">黄</string>
+    <string name="xinfeng_led_qing">青</string>
+    <string name="xinfeng_led_zi">紫</string>
+    <string name="xinfeng_led_red_green_blue">红绿蓝</string>
+    <string name="xinfeng_led_yellow_qing_zi">黄青紫</string>
+    <string name="xinfeng_led_seven_run">七色转动</string>
+    <string name="xinfeng_led_color_shadow">七彩渐变</string>
+    <string name="xinfeng_led_run">幻彩转动</string>
+    <string name="xinfeng_led_color_breathe">七色呼吸</string>
+    <string name="xinfeng_led_auto">自动模式</string>
+    <string name="xinfeng_led_white">白</string>
+    <string name="xinfeng_led_pause">暂停</string>
+    <string name="xinfeng_led_close">关闭</string>
+
+
+    <!--消息中心-->
+    <string name="message_notification_back_font">&#xe61b;</string>
+    <string name="txt_message_title">消息中心</string>
+    <string name="font_message_system">&#xe63c;</string>
+    <string name="txt_message_system">系统消息</string>
+    <string name="font_message_dot">&#xe639;</string>
+    <string name="enter_font">&#xe6a1;</string>
+    <string name="font_message_mine">&#xe613;</string>
+    <string name="txt_message_mine">我的消息</string>
+
+    <!--系统通知-->
+    <string name="clear_txt">清空</string>
+    <string name="look_txt">点击查看</string>
+
+    <!--系统通知详情-->
+    <string name="notification_detail_txt">通知详情</string>
+    <!--暂无数据-->
+    <string name="font_nodata">&#xe661;</string>
+    <string name="tv_nodata">暂无数据</string>
+
+    <!--注册-->
+    <string name="register_txt">注册</string>
+    <string name="register_remind_txt">点击“立即注册”，即表示您已同意遵守欧众</string>
+    <string name="register_agreement_txt">用户协议</string>
+    <string name="register_and_txt"> 和 </string>
+    <string name="register_policy_txt">隐私政策</string>
+
+    <!--设置定时-->
+    <string name="time_set_title">定时设置</string>
+    <string name="time_set_txt">时间设置</string>
+    <string name="time_set_open_time">开启时间</string>
+    <string name="time_set_close_time">关闭时间</string>
+    <string name="time_set_repeat">重复设置</string>
+    <string name="time_set_is_day_repeat">是否每天重复</string>
+    <string name="time_set_commit">提交定时</string>
+    <string name="time_set_switch_off">&#xe634;</string>
+    <string name="time_set_switch_on">&#xe60d;</string>
+    <!--引导页-->
+    <string name="guide1_txt1">控制</string>
+    <string name="guide1_txt2">随时随地听候差遣</string>
+    <string name="guide2_txt1">云端</string>
+    <string name="guide2_txt2">数据智能决策</string>
+    <string name="guide3_txt1">联动</string>
+    <string name="guide3_txt2">家电也能团队协作</string>
+
+    <!--检查更新-->
+    <string name="txt_check_update_title">检查更新</string>
+    <string name="txt_current_version">当前版本V</string>
+    <string name="txt_once_update">立即更新</string>
+    <!--建议反馈-->
+    <string name="txt_feedback_content_hint">写下您遇到的问题，或告诉我们您宝贵的意见~</string>
+    <string name="txt_feedback_total_count">300</string>
+    <string name="txt_feedback_xie_line">/</string>
+    <string name="txt_feedback_pic_hint">问题截图（选填）</string>
+
+
+    <!--个人中心-->
+    <string name="txt_personal">个人中心</string>
+    <string name="txt_personal_no_nickname">暂无昵称</string>
+    <string name="txt_personal_userinfo">用户信息</string>
+    <string name="txt_personal_message_notification">消息中心</string>
+    <string name="txt_personal_about_product">关于产品</string>
+    <string name="txt_personal_about_us">关于我们</string>
+    <string name="txt_personal_clean_cache">清除缓存</string>
+    <string name="txt_personal_current_cache">当前缓存：</string>
+    <string name="txt_clean_cache_hint1">缓存即将被清除,</string>
+    <string name="txt_clean_cache_hint2">确定继续?</string>
+    <string name="txt_sure">确定</string>
+    <string name="txt_cancle">取消</string>
+    <string name="txt_none_cache_hint">暂时没有缓存呦!</string>
+
+
+
+    <!--关于产品-->
+    <string name="txt_about_product">关于产品</string>
+    <string name="txt_product_instructions">产品说明</string>
+    <string name="txt_online_help">在线帮助</string>
+    <string name="txt_feedback">建议反馈</string>
+    <string name="txt_update_log">更新日志</string>
+    <string name="txt_all_machine">所有设备</string>
+
+    <!--关于我们-->
+    <string name="txt_go_evaluate">去评价</string>
+    <string name="txt_contact_us">联系我们</string>
+
+    <!--用户信息-->
+    <string name="txt_user_info_avatar">头像</string>
+    <string name="txt_user_info_nickname">昵称</string>
+    <string name="txt_user_info_sex">性别</string>
+    <string name="txt_user_info_sex_nan">男</string>
+    <string name="txt_user_info_sex_nv">女</string>
+    <string name="txt_user_info_birthday">生日</string>
+    <string name="txt_user_info_mine_address">我的地址</string>
+    <string name="txt_user_info_mine_id">我的ID</string>
+    <string name="txt_user_info_modify_pwd">修改密码</string>
+    <string name="txt_user_info_mine_email">我的邮箱</string>
+    <string name="txt_user_info_exit">退出登录</string>
+    <string name="txt_user_info_modify_avatar">修改头像</string>
+    <string name="txt_user_info_avatar_camera">相机</string>
+    <string name="txt_user_info_avatar_album">相册</string>
+    <string name="fail_txt">失败</string>
+    <string name="txt_user_info_nickname_hint">设置昵称</string>
+    <string name="txt_user_info_sex_hint">设置性别</string>
+    <string name="txt_user_info_email_hint">暂未绑定邮箱</string>
+    <string name="txt_user_info_birthday_hint">设置生日</string>
+
+
+    <!--修改昵称-->
+    <string name="txt_modify_nickname_title">修改昵称</string>
+    <string name="txt_modify_email_title">修改邮箱</string>
+    <string name="txt_modify_nickname_commit">完成</string>
+
+
+
+    <!--我的地址-->
+    <string name="txt_mine_address_title">我的地址</string>
+    <string name="txt_mine_address_name">收货人</string>
+    <string name="txt_mine_address_phone">联系电话</string>
+    <string name="txt_mine_address_city">所在地区</string>
+    <string name="txt_mine_address_postcode">邮政编码</string>
+    <string name="txt_mine_address_city_select">请选择</string>
+    <string name="txt_mine_address_detail_hint">请输入详细地址</string>
+    <string name="txt_save">保存</string>
+
+
+
+    <!--登录-->
+    <string name="txt_login">登录</string>
+    <string name="txt_forget_pwd">忘记密码</string>
+    <string name="txt_immediately_register">立即注册</string>
+    <string name="txt_login_account">账号</string>
+    <string name="txt_login_pwd">密码</string>
+    <string name="txt_login_account_hint">请输入您的手机号或ID账号</string>
+    <string name="txt_login_pwd_hint">请输入密码</string>
+    <string name="txt_login_fail1">参数异常为空或登录名格式错误</string>
+    <string name="txt_login_fail2">用户不存在</string>
+    <string name="txt_login_fail3">密码错误</string>
+
+
+    <!--注册-->
+    <string name="txt_back">返回</string>
+    <string name="txt_register_account_hint">请输入您的手机号</string>
+    <string name="txt_register_pwd_hint">请输入密码(6位数字或字母或两者组合)</string>
+    <string name="txt_register_code_hint">请输入验证码</string>
+    <!--忘记密码-->
+    <string name="txt_send_message">发送短信</string>
+    <string name="txt_next">下一步</string>
+    <string name="txt_forget_pwd_resend_hint1">s后重发</string>
+    <string name="txt_forget_pwd_resend_hint2">重新发送</string>
+    <string name="txt_new_pwd">请输入新密码(6位数字、字母或组合)</string>
+    <string name="txt_confirm_pwd">确认密码</string>
+    <string name="txt_commit">提交</string>
+
+    <!--重置密码-->
+    <string name="txt_reset_pwd">重置密码</string>
+    <string name="txt_reset_pwd_phone_hint">当前登录的手机号:</string>
+    <!--首页/我的设备-->
+    <string name="txt_my_machine">设备列表</string>
+    <string name="txt_my_machine_weather">多云转晴</string>
+    <string name="txt_my_machine_temp">℃</string>
+    <string name="txt_my_machine_shidu_hint">湿度:</string>
+    <string name="txt_my_machine_shidu">53%</string>
+    <string name="txt_my_machine_zhiliang_hint">空气质量:</string>
+    <string name="txt_my_machine_zhiliang">良</string>
+    <string name="txt_my_machine_wu">雾</string>
+    <string name="txt_my_machine_wind">中风</string>
+    <string name="txt_item_my_machine_name">菊花智能冷风扇</string>
+    <string name="txt_item_my_machine_type_num">No.1</string>
+    <string name="txt_param_exception">参数异常</string>
+    <string name="txt_current_city">杭州</string>
+    <string name="txt_my_machine_nodata">暂无添加任何设备</string>
+    <string name="txt_my_machine_nodata_add">添加设备</string>
+
+
+    <!--添加设备-->
+    <string name="txt_add_machine_set_title">设置设备</string>
+    <string name="txt_add_machine_set_t1">请开机长按功能按键3秒</string>
+    <string name="txt_add_machine_set_t2">听到“滴”的声音后指示灯闪烁，进入配网模式</string>
+    <string name="txt_add_machine_set_t3">(wifi功能按键请查看说明书)</string>
+
+    <string name="txt_add_machine_wifi_title">设置WIFI</string>
+    <string name="txt_add_machine_wifi_name_t1">WIFI名字：</string>
+    <string name="txt_add_machine_wifi_pwd">WIFI密码：</string>
+    <string name="txt_add_machine_wifi_pwd_hint">请输入WIFI密码</string>
+    <string name="txt_add_machine_wifi_search">搜索设备</string>
+    <string name="txt_add_machine_wifi_nonetwork_hint">连接机器需要您手机连接wifi，是否设置手机连接wifi?</string>
+    <string name="txt_add_machine_wifi_nonetwork_set">设置</string>
+    <string name="txt_add_machine_wifi_nonetwork_know">知道了</string>
+    <string name="txt_add_machine_fail">添加失败</string>
+    <string name="txt_add_machine_fail_warn">警告</string>
+    <string name="txt_add_machine_fail_t1">请按以下步骤排查可能的问题并重试:</string>
+    <string name="txt_add_machine_fail_t2">1.请确保您的设备已按照开始时的提示，设置到配网状态;</string>
+    <string name="txt_add_machine_fail_t3">2.确保之前输入的WIFI账号密码无误;</string>
+    <string name="txt_add_machine_fail_t4">3.确保设备与家庭路由器的距离不要太远;</string>
+    <string name="txt_add_machine_fail_t5">4.您的路由器是否设置到了5GHz，可以进入路由器设置管理检查，确保2.4GHz;</string>
+    <string name="txt_retry">重试</string>
+    <string name="txt_add_machine_fail_feedback">反馈</string>
+
+    <!--空气净化器B1(恒马)-->
+    <string name="txt_query_state_nodata">没有数据</string>
+    <string name="txt_query_state_param">参数异常或为空</string>
+
+
+
+
+
+</resources>

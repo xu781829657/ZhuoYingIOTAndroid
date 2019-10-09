@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/shape_white_small_corner"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/tv_code_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="关闭"
+                android:textColor="@color/nine_txt_color"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="输入验证码"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_code_phone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="验证码已发送至"
+            android:textColor="@color/nine_txt_color"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_code_resend"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_message_code_btn_resend"
+            android:text="重新发送"
+            android:textColor="@color/six_txt_color"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_code_num1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edt_code_num2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/edt_code_num3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/edt_code_num4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/edt_code_num5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/edt_code_num6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_message_code_orange_stroke"
+                android:gravity="center"
+                android:maxLength="1"
+                android:inputType="number"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
+

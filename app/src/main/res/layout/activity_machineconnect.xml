@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#000a7b9b"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="连接设备"
+                android:textColor="#5c5c5c"
+                android:textSize="18dp" />
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_machineconnect_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="3dp"
+            android:src="@mipmap/back" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <com.ouzhongiot.ozapp.others.CircleProgressView
+            android:id="@+id/mCircleBar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_connect1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="正在搜索设备...."
+            android:textColor="@color/gray"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_connect2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="正在连接设备..."
+            android:textColor="@color/gray"
+            android:textSize="14dp" />
+        <TextView
+            android:id="@+id/tv_connect3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="将设备注册到云端..."
+            android:textColor="@color/gray"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

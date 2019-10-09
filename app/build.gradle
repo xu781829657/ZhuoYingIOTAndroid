@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.ouzhongiot.ozapp"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 562
+        versionName "5.6.2"
+        buildConfigField("boolean", "LOG", "true")
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "TWxme3OkYjA89rlIuBgyE2",
+                GETUI_APP_KEY   : "tzVHOHA6N36htmftfUwq3A",
+                GETUI_APP_SECRET: "JAVioqKoyp96woS4wXSDC6",
+        ]
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "mips", "mips64", "x86", "x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Zipalign优化
+//            zipAlignEnabled true
+            // 移除无用的resource文件
+//            shrinkResources true
+//            buildConfigField("boolean", "LOG", "false")
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/license.txt'
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.getui:sdk:2.10.2.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile files('libs/volly-1.0.11.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile 'in.srain.cube:ptr-load-more:1.0.5'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.alibaba:fastjson:1.1.55.android'
+}

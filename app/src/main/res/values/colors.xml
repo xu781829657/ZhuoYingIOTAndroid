@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#000000</color>
+    <color name="green">#3dc2f9</color>
+    <color name="blue">#003EDE</color>
+    <color name="black">#000000</color>
+    <color name="gray">#a3a3a3</color>
+    <color name="hightgray">#454545</color>
+    <color name="white">#ffffff</color>
+    <color name="airclean">#31c9da</color>
+    <color name="airclean0">#fac94d</color>
+    <color name="ltgray">#ededed</color>
+    <color name="province_line_border">#dcdcdc</color>
+    <color name="aircleanyou">#31c9da</color>
+    <color name="aircleanliang">#5ec9bb</color>
+    <color name="aircleanyiban">#c9c970</color>
+    <color name="aircleancha">#fac94d</color>
+    <color name="systembackground">#fafafa</color>
+    <color name="xinfeng">#049eff</color>
+    <color name="xinfengoff">#1b6491</color>
+    <color name="txt_hint_color">#cccccc</color>
+    <!--淡灰色-->
+    <color name="light_gray">#e6e6e6</color>
+    <color name="light_white">#f1f1f1</color>
+    <color name="xinfeng_txt_color">#999999</color>
+    <color name="xinfeng_more_txt_color">#666666</color>
+    <!--引导图背景色-->
+
+    <color name="guide_bg1">#4DCFD1</color>
+    <color name="guide_bg2">#F1B145</color>
+    <color name="guide_bg3">#4EADFD</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <color name="profile_line_color">#5eb1dd</color>
+
+    <color name="personal_module_page_title_color">#5c5c5c</color>
+    <color name="three_txt_color">#333333</color>
+    <color name="six_txt_color">#666666</color>
+    <color name="nine_txt_color">#999999</color>
+    <color name="red_color">#ff0000</color>
+
+    <!--粉红-->
+    <color name="pink_color">#F991AA</color>
+    <!--天蓝-->
+    <color name="sky_blue_color">#89DBC8</color>
+    <!--新的背景色-->
+    <color name="background_color">#f3f3f3</color>
+    <!--冷风扇蓝色-->
+    <color name="cold_fan_blue">#1A8CE2</color>
+
+    <!--新风-->
+    <!--自动-->
+    <color name="xinfeng_led_auto">#26044a</color>
+    <!--七彩渐变-->
+    <color name="xinfeng_led_color_shadow">#89074b</color>
+    <!--幻彩转动-->
+    <color name="xinfeng_led_run">#5a1864</color>
+    <!--七色呼吸-->
+    <color name="xinfeng_led_breathe">#282a7b</color>
+    <!--红绿蓝-->
+    <color name="xinfeng_led_red_green_blue">#0b54a1</color>
+    <!--黄青紫-->
+    <color name="xinfeng_led_yellow_qing_zi">#1898b7</color>
+    <!--七色转动-->
+    <color name="xinfeng_led_seven_color_run">#828d99</color>
+    <!--红-->
+    <color name="xinfeng_led_red">#fb0d1b</color>
+    <!--绿-->
+    <color name="xinfeng_led_green">#29fd2f</color>
+    <!--蓝-->
+    <color name="xinfeng_led_blue">#2339fa</color>
+    <!--黄-->
+    <color name="xinfeng_led_yellow">#fffd38</color>
+    <!--青-->
+    <color name="xinfeng_led_qing">#42fffe</color>
+    <!--紫-->
+    <color name="xinfeng_led_zi">#fc3dfb</color>
+    <!--白-->
+    <color name="xinfeng_led_white">#ffffff</color>
+    <!--暂停-->
+    <color name="xinfeng_led_pause">#6e87a9</color>
+    <!--关闭-->
+    <color name="xinfeng_led_close">#999999</color>
+
+
+    <!--引导页-->
+    <color name="guide1_color">#FF8871</color>
+    <color name="guide2_color">#59B8FD</color>
+    <color name="guide3_color">#D682EA</color>
+
+    <!--新的背景色-->
+    <!--#dee4e7-->
+    <color name="bg_color">#f7fbfd</color>
+    <!--新的主题色-->
+    <color name="main_theme_color">#009dfb</color>
+    <color name="main_black_color">#222222</color>
+    <!--关于我们-->
+    <color name="txt_version_code_color">#6c6c6c</color>
+    <!--新的红色-->
+    <color name="new_red_color">#ff1919</color>
+    <!--内容黑-->
+    <color name="content_black_color">#858585</color>
+
+
+
+
+
+</resources>

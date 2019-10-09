@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ouzhongiot.ozapp">
+    <!-- 解决Android L上通知显示异常问题，targetSdkVersion需要设置成22 -->
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="22" />
+
+    <!-- 个推SDK权限配置开始 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 自定义权限 -->
+    <uses-permission android:name="getui.permission.GetuiService.com.ouzhongiot.ozapp" />
+    <permission
+        android:name="getui.permission.GetuiService.com.ouzhongiot.ozapp"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--个推权限-->
+    <!-- iBeancon功能所需权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 个推3.0电子围栏功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <application
+        android:name=".OZApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_bule"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.GuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.forgetpassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <!--修改后的忘记密码-->
+        <activity
+            android:name=".activity.ForgetPwdActivity2"
+            android:screenOrientation="portrait" />
+        <!--忘记密码：输入新密码页-->
+        <activity
+            android:name=".activity.ForgetSetNewPwdActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.register"
+            android:screenOrientation="portrait" />
+        <!--修改后的注册-->
+        <activity
+            android:name=".activity.RegisterActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.argument"
+            android:screenOrientation="portrait" />
+        <!--用户协议-->
+        <activity
+            android:name=".activity.UserAgreementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.privacy"
+            android:screenOrientation="portrait" />
+        <!--隐私政策-->
+        <activity
+            android:name=".activity.PolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.sendmessage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.registerpassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.forgetpasswordsendmessage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.resetpassword"
+            android:screenOrientation="portrait" />
+        <!--重置密码-->
+        <activity
+            android:name=".activity.ResetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zxing.activity.CaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zxing.activity.ResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".activity.machinelist"
+            android:screenOrientation="portrait" />
+        <!--某个设备类型下的列表-->
+        <activity
+            android:name=".activity.MachineTypeUnderListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.coldfanset"
+            android:screenOrientation="portrait" />
+        <!--添加设备设置页-->
+        <activity
+            android:name=".activity.AddMachineSetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.coldfanAwifi"
+            android:screenOrientation="portrait" />
+        <!--添加设备wifi页-->
+        <activity
+            android:name=".activity.AddMachineWifiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.machineconnect"
+            android:screenOrientation="portrait" />
+        <!--添加设备配网链接-->
+        <!--添加设备失败-->
+        <activity
+            android:name=".activity.AddMachineFailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.mymachine"
+            android:screenOrientation="portrait" />
+        <!--首页-->
+        <activity
+            android:name=".activity.MyMachineActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.coldfanAindex"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.coldfanAwork"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.coldfanAyonghuzhongxin"
+            android:screenOrientation="portrait" />
+        <!--用户信息-->
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.aboutproduct"
+            android:screenOrientation="portrait" />
+        <!--关于产品-->
+        <activity
+            android:name=".activity.AboutProductActivity"
+            android:screenOrientation="portrait" />
+        <!--消息通知-->
+        <activity
+            android:name=".activity.MessageNotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MessageNotificationActivity2"
+            android:screenOrientation="portrait" />
+        <!--系统通知-->
+        <activity
+            android:name=".activity.SystemNotificationActivity"
+            android:screenOrientation="portrait" />
+        <!--系统通知详情-->
+        <activity
+            android:name=".activity.SystemNotificationDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--我的消息-->
+        <activity
+            android:name=".activity.MineMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.youhuiquan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.lianxiwomen"
+            android:screenOrientation="portrait" />
+        <!--联系我们-->
+        <activity
+            android:name=".activity.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <!--关于我们-->
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.chanpinshuoming"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.zaixianbangzhu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.jianyifankui"
+            android:screenOrientation="portrait" />
+        <!--意见反馈-->
+        <activity
+            android:name=".activity.FeedBackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.gengxinrizhi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CheckUpdateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.gerenxinxi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.zbi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.dizhi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.nicheng"
+            android:screenOrientation="portrait" />
+        <!--修改昵称-->
+        <activity
+            android:name=".activity.ModifyNicknameActivity"
+            android:screenOrientation="portrait" />
+        <!--我的地址-->
+        <activity
+            android:name=".activity.MineAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.youxiang"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ConnectFaild"
+            android:screenOrientation="portrait" />
+
+        <!--嵌入的设备详情页-->
+        <activity
+            android:name=".web.WebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".lianxiabroadcass.MybroadcassReceiver">
+            <intent-filter>
+                <action android:name="QUIT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- <receiver android:name=".others.ConnectionChangeReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="ISCiQQuZ0pMRUzw9u12FU7xYlhf0dWGR" />
+
+        <activity
+            android:name=".airclean.AirCleanindex"
+            android:screenOrientation="portrait" />
+        <!--空气净化器B1-->
+        <activity
+            android:name=".airclean.B1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".airclean.aircleanwaichumoshi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".airclean.aircleanzhoumomoshi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".airclean.aircleanzhinengmoshi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".airclean.aircleanzidingyimoshi"
+            android:screenOrientation="portrait" />
+
+        <!-- <service -->
+        <!-- android:name=".activity.duanwangchonglian" -->
+        <!-- android:enabled="false" -->
+        <!-- android:exported="false" /> -->
+
+        <activity
+            android:name=".airclean.Aircleangengduoshuju"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dryer.DryerIndex"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dryer.DryerYinerhuli"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dryer.DryerJiuyichushi"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dryer.DryerZidingyi"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".xinfengairclean.XinfengIndex"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".service.DownloadService" />
+        <service
+            android:name=".service.TCPService"
+            android:enabled="true"
+            android:exported="false"
+            android:icon="@mipmap/icon_bule">
+
+        </service>
+
+        <receiver android:name=".lianxiabroadcass.UnConnectedBR">
+            <intent-filter>
+                <action android:name="UNCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <!-- 新风空气净化器 -->
+        <activity
+            android:name=".activity.XFAirActivity"
+            android:screenOrientation="portrait" />
+        <!--加载网页-->
+        <activity
+            android:name=".web.MachineProductDesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TypeList"
+            android:screenOrientation="portrait" />
+        <!--设备类型列表-->
+        <activity
+            android:name=".activity.MachineTypeListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".web.MachineController"
+            android:screenOrientation="portrait" />
+        <!--设置定时页-->
+        <activity
+            android:name=".activity.SetTimeActivity"
+            android:screenOrientation="portrait" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--个推-->
+        <service
+            android:name="com.ouzhongiot.ozapp.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice">
+        </service>
+        <service android:name="com.ouzhongiot.ozapp.service.PushIntentService"/>
+    </application>
+
+</manifest>
