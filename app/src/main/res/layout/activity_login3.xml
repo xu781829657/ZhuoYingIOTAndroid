@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -26,12 +26,19 @@
             android:textSize="17sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:text="WEI XIN FENG"
+            android:textColor="@color/content_black_color"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="12"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
         <!--输入内容-->
         <EditText
@@ -62,7 +69,6 @@
 
 
         <!--按钮-->
-
 
         <Button
             android:id="@+id/btn_login"
