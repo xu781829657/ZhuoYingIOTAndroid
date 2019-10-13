@@ -77,7 +77,7 @@ public class TCPService extends Service {
                 .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.icon_bule))
                 .setSmallIcon(R.mipmap.icon_bule).setContentText("")
                 .setWhen(System.currentTimeMillis())
-                .setContentTitle("联侠运行中");
+                .setContentTitle("微新风运行中");
         // 设置PendingIntent
 
         // 设置下拉列表中的图标(大图标)

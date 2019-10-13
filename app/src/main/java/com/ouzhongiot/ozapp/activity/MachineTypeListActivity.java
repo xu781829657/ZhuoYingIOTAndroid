@@ -16,6 +16,7 @@ import com.ouzhongiot.ozapp.base.BaseHomeActivity;
 import com.ouzhongiot.ozapp.constant.UrlConstant;
 import com.ouzhongiot.ozapp.http.ConnectDataTask;
 import com.ouzhongiot.ozapp.http.HcNetWorkTask;
+import com.ouzhongiot.ozapp.tools.LogManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -101,6 +102,7 @@ public class MachineTypeListActivity extends BaseHomeActivity implements Connect
         if (!result.isEmpty()) {
             try {
                 JSONObject object = new JSONObject(result);
+                LogManager.d("MachineTypeListActivity onResult"+object.toString());
                 int state = object.getInt("state");
                 if (code == 2) {
                     //查询所有类型

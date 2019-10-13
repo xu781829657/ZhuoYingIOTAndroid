@@ -45,7 +45,7 @@ public class coldfanAyonghuzhongxin extends LoginOutActivity {
             public void onClick(View v) {
                 AndroidShare as = new AndroidShare(
                         coldfanAyonghuzhongxin.this,
-                        "联侠——让智能变得简单...",
+                        "微新风——让智能变得简单...",
                         "www.ouzhongiot.com");
                 as.show();
             }

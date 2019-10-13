@@ -194,7 +194,7 @@ public class Gerenzhongxin extends Fragment implements View.OnClickListener, Con
                 //分享
                 AndroidShare as = new AndroidShare(
                         getActivity(),
-                        "联侠——让智能变得简单...",
+                        "微新风——让智能变得简单...",
                         "www.ouzhongiot.com");
                 as.show();
                 break;

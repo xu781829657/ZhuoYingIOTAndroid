@@ -3,6 +3,7 @@ package com.ouzhongiot.ozapp.fragment;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -30,6 +31,7 @@ import com.ouzhongiot.ozapp.tools.LogTools;
 import com.ouzhongiot.ozapp.tools.SocketOrderTools;
 import com.ouzhongiot.ozapp.tools.SpData;
 import com.ouzhongiot.ozapp.tools.ToastTools;
+import com.ouzhongiot.ozapp.tools.ViewUtils;
 import com.ouzhongiot.ozapp.view.DefineGridView;
 import com.ouzhongiot.ozapp.web.WebViewActivity;
 
@@ -48,6 +50,7 @@ import java.util.Map;
 
 public class MymachineFragment extends BaseHomeFragment implements ConnectDataTask.OnResultDataLintener, View.OnClickListener, AdapterView.OnItemClickListener {
     private final int SKIP_REQUEST_CODE = 1000;
+    private ImageView iv_head_banner;
     private ImageView img_add;//添加设备
     private DefineGridView mGridView;
     private MyMachineGridAdapter mAdapter;
@@ -99,6 +102,13 @@ public class MymachineFragment extends BaseHomeFragment implements ConnectDataTa
         rlayout_my_machine = (RelativeLayout) mView.findViewById(R.id.rlayout_my_machine);
         llayout_weather = (LinearLayout) mView.findViewById(R.id.llayout_my_machine_weather);
 
+        iv_head_banner = (ImageView) mView.findViewById(R.id.iv_head);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) iv_head_banner.getLayoutParams();
+        layoutParams.width = LinearLayout.LayoutParams.MATCH_PARENT;
+        layoutParams.height = (int)(ViewUtils.getScreenWidth()*560/1388f);
+
+        Log.d("xdw","layoutParams.height:"+layoutParams.height);
+        iv_head_banner.setLayoutParams(layoutParams);
 
     }
 
@@ -107,7 +117,7 @@ public class MymachineFragment extends BaseHomeFragment implements ConnectDataTa
         //请求我的设备列表接口
         requestMyMachineList();
         //请求天气接口
-        requestWeather();
+        //requestWeather();
         //设置点击事件
         setClick();
 

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
     private SharedPreferences preference;
 
     private SharedPreferences.Editor editor;
-        public static final String ip = "http://114.55.5.92:8080/";
+    public static final String ip = "http://114.55.5.92:8080/";
     public static final String ip0 = "114.55.5.92";
 //    public static final String ip = "http://192.168.1.104:8080/";
 //    public static final String ip0 = "192.168.1.104";
@@ -94,168 +94,45 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
     private LinearLayout ll_main_xiazai;
     private TextView tv_main_xiazaijindu;
     private ImageView iv_download_logo, iv_download_back;
-    private MsgReceiver msgReceiver;
     private Boolean ISloading = false;
 
 
-
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case 0:
-                    if (isForce.equals("true")) {
-                        //强制更新
-                        builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("您当前的版本过低，请更新至最新版本，谢谢支持！");
-                        builder.setPositiveButton("点我更新", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-//                            Intent intent= new Intent(Intent.ACTION_VIEW);
-//                            Uri content_url = Uri.parse("http://114.55.5.92/andriod/lianxia.apk");
-//                            intent.setData(content_url);
-//                            startActivity(intent);
-//                            finish();
-
-                                Intent it = new Intent(
-                                        MainActivity.this,
-                                        DownloadService.class);
-                                it.putExtra("apkurl", "http://www.ouzhongiot.com/android/lianxia.apk");
-                                MainActivity.this.startService(it);
-                                ISloading = true;
-                                //代表当前版本是否为最新的
-                                editor.putBoolean("isNewest", true);
-                                editor.commit();
-                            }
-                        });
-                        builder.setNegativeButton("不更新", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                //不更新，就要退出整个应用程序
-                                Intent intent = new Intent(Intent.ACTION_MAIN);
-                                intent.addCategory(Intent.CATEGORY_HOME);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent);
-                                android.os.Process.killProcess(android.os.Process.myPid());
-
-                            }
-                        });
-                        builder.create();
-                        builder.show();
-                    } else if (isForce.equals("false")) {
-                        //不强制更新
-                        builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("您当前的版本过低，请更新至最新版本，谢谢支持！");
-                        builder.setPositiveButton("点我更新", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-//                            Intent intent= new Intent(Intent.ACTION_VIEW);
-//                            Uri content_url = Uri.parse("http://114.55.5.92/andriod/lianxia.apk");
-//                            intent.setData(content_url);
-//                            startActivity(intent); ·
-//                            finish();
-
-
-                                Intent it = new Intent(
-                                        MainActivity.this,
-                                        DownloadService.class);
-                                it.putExtra("apkurl", "http://www.ouzhongiot.com/android/lianxia.apk");
-                                MainActivity.this.startService(it);
-                                ISloading = true;
-                                //代表当前版本是否为最新的
-                                editor.putBoolean("isNewest", true);
-                                editor.commit();
-
-                            }
-                        });
-                        builder.setNegativeButton("不更新", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                editor.putBoolean("isNewest", false);
-                                editor.commit();
-                                //不需要版本更新
-                                new Thread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        next();
-                                    }
-                                }).start();
-
-                            }
-                        });
-                        builder.create();
-                        builder.show();
-                    }
-                    break;
-                case 1:
-                    logoweight = iv_download_logo.getWidth();
-                    tv_main_xiazaijindu.setText(downloadprogress + "%");
-                    FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) iv_download_back.getLayoutParams();
-                    params.width = (int) ((double) downloadprogress / 100 * logoweight - 4);
-                    iv_download_back.setLayoutParams(params);
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         OZApplication.getInstance().addActivity(this);
+        initWidgets();
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                initData();
+            }
+        });
+
+    }
+    private void initWidgets(){
+        ll_main_xiazai = (LinearLayout) findViewById(R.id.ll_main_xiazai);
+        tv_main_xiazaijindu = (TextView) findViewById(R.id.tv_main_xiazaijindu);
+        iv_download_back = (ImageView) findViewById(R.id.iv_download_back);
+        iv_download_logo = (ImageView) findViewById(R.id.iv_download_logo);
+        iv_main = (ImageView) findViewById(R.id.iv_main);
+        iv_mainwenzi = (ImageView) findViewById(R.id.iv_mainwenzi);
+    }
+
+    private void initData(){
         //初始化个推SDK
         PushManager.getInstance().initialize(this.getApplicationContext(), com.ouzhongiot.ozapp.service.PushService.class);
         //注册PushIntentService类
         PushManager.getInstance().registerPushIntentService(this.getApplicationContext(), PushIntentService.class);
         getuiClientid = PushManager.getInstance().getClientid(this.getApplicationContext());
-        ll_main_xiazai = (LinearLayout) findViewById(R.id.ll_main_xiazai);
-        tv_main_xiazaijindu = (TextView) findViewById(R.id.tv_main_xiazaijindu);
-        iv_download_back = (ImageView) findViewById(R.id.iv_download_back);
-        iv_download_logo = (ImageView) findViewById(R.id.iv_download_logo);
-
-        //动态注册广播接收器
-        msgReceiver = new MsgReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("Download_RECEIVER");
-        registerReceiver(msgReceiver, intentFilter);
-
 
         //获取屏幕大小
         DisplayMetrics dm = getResources().getDisplayMetrics();
         int w_screen = dm.widthPixels;
         int h_screen = dm.heightPixels;
-//        Log.wtf("这个是屏幕的大小", "屏幕尺寸2：宽度 = " + w_screen + "高度 = " + h_screen + "密度 = " + dm.densityDpi);
-
-//        Intent startIntent = new Intent(this, duanwangchonglian.class);
-//        startService(startIntent);
-//        heartbyte = SetPackage.GetHeartpackage("18fe34f56bcc","100000001","A1");
-        iv_main = (ImageView) findViewById(R.id.iv_main);
-        iv_mainwenzi = (ImageView) findViewById(R.id.iv_mainwenzi);
-        //淡入淡出效果
-        AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-        alphaAnimation.setDuration(1500);
-        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        iv_main.startAnimation(alphaAnimation);
-        iv_mainwenzi.startAnimation(alphaAnimation);
-
 
         preference = getSharedPreferences("data", MODE_PRIVATE);
         editor = preference.edit();
@@ -271,113 +148,20 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
         editor.putBoolean("xintiaojiesu", true);
         editor.commit();
 
+        if (isConn(MainActivity.this)) {
+            next();
+            //new HcNetWorkTask(this, this, 1,false).doPost(UrlConstant.QUERY_LATEST_VERSION, null, postParams(1).getBytes());
 
-        // -----------location config ------------
-        locationService = ((OZApplication) getApplication()).locationService;
-        //获取locationservice实例，建议应用中只初始化1个location实例，然后使用，可以参考其他示例的activity，都是通过此种方式获取locationservice实例的
-        locationService.registerListener(mListener);
-        //注册监听
-        int type = getIntent().getIntExtra("from", 0);
-        if (type == 0) {
-            locationService.setLocationOption(locationService.getDefaultLocationClientOption());
-        } else if (type == 1) {
-
-            locationService.setLocationOption(locationService.getOption());
+        } else {
+            showNoNetWorkDlg(MainActivity.this);
         }
-        locationService.start();// 定位SDK
+
+
+
     }
-
-
-    private BDLocationListener mListener = new BDLocationListener() {
-
-        @Override
-        public void onReceiveLocation(BDLocation location) {
-            Log.wtf("开始监听", "进入监听");
-            // TODO Auto-generated method stub
-            if (null != location && location.getLocType() != BDLocation.TypeServerError) {
-//                StringBuffer sb = new StringBuffer(256);
-//                sb.append("time : ");
-                /**
-                 * 时间也可以使用systemClock.elapsedRealtime()方法 获取的是自从开机以来，每次回调的时间；
-                 * location.getTime() 是指服务端出本次结果的时间，如果位置不发生变化，则时间不变
-                 */
-//                sb.append(location.getTime());
-//                sb.append("\nerror code : ");
-//                sb.append(location.getLocType());
-//                sb.append("\nlatitude : ");
-//                sb.append(location.getLatitude());
-//                sb.append("\nlontitude : ");
-//                sb.append(location.getLongitude());
-//                sb.append("\nradius : ");
-//                sb.append(location.getRadius());
-//                sb.append("\nCountryCode : ");
-//                sb.append(location.getCountryCode());
-//                sb.append("\nCountry : ");
-//                sb.append(location.getCountry());
-//                sb.append("\ncitycode : ");
-//                sb.append(location.getCityCode());
-                province = location.getProvince();
-//                sb.append("\ncity : ");
-                city = location.getCity();
-//                sb.append(location.getCity());
-//                sb.append("\nDistrict : ");
-                district = location.getDistrict();
-//                sb.append(location.getDistrict());
-//                sb.append("\nStreet : ");
-//                sb.append(location.getStreet());
-//                sb.append("\naddr : ");
-//                sb.append(location.getAddrStr());
-//                sb.append("\nDescribe: ");
-//                sb.append(location.getLocationDescribe());
-//                sb.append("\nDirection(not all devices have value): ");
-//                sb.append(location.getDirection());
-//                sb.append("\nPoi: ");
-                if (location.getPoiList() != null && !location.getPoiList().isEmpty()) {
-                    for (int i = 0; i < location.getPoiList().size(); i++) {
-                        Poi poi = (Poi) location.getPoiList().get(i);
-//                        sb.append(poi.getName() + ";");
-                    }
-                }
-                if (location.getLocType() == BDLocation.TypeGpsLocation) {// GPS定位结果
-//                    sb.append("\nspeed : ");
-//                    sb.append(location.getSpeed());// 单位：km/h
-//                    sb.append("\nsatellite : ");
-//                    sb.append(location.getSatelliteNumber());
-//                    sb.append("\nheight : ");
-//                    sb.append(location.getAltitude());// 单位：米
-//                    sb.append("\ndescribe : ");
-//                    sb.append("gps定位成功");
-                } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {// 网络定位结果
-//                    // 运营商信息
-
-//                    sb.append("\noperationers : ");
-//                    sb.append(location.getOperators());
-//                    sb.append("\ndescribe : ");
-//                    sb.append("网络定位成功");
-                } else if (location.getLocType() == BDLocation.TypeOffLineLocation) {// 离线定位结果
-//                    sb.append("\ndescribe : ");
-//                    sb.append("离线定位成功，离线定位结果也是有效的");
-                } else if (location.getLocType() == BDLocation.TypeServerError) {
-//                    sb.append("\ndescribe : ");
-//                    sb.append("服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因");
-                } else if (location.getLocType() == BDLocation.TypeNetWorkException) {
-//                    sb.append("\ndescribe : ");
-//                    sb.append("网络不同导致定位失败，请检查网络是否通畅");
-                } else if (location.getLocType() == BDLocation.TypeCriteriaException) {
-//                    sb.append("\ndescribe : ");
-//                    sb.append("无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
-                }
-                Log.wtf("这个是定位的信息-------------------------", "城市:" + city + "区:" + district);
-
-            }
-        }
-
-    };
 
     @Override
     protected void onDestroy() {
-        locationService.stop();
-        unregisterReceiver(msgReceiver);
         super.onDestroy();
     }
 
@@ -437,13 +221,9 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
         Intent intent = new Intent(this, TCPService.class);
         startService(intent);
 
-        if (isConn(MainActivity.this)) {
 
-            new HcNetWorkTask(this, this, 1).doPost(UrlConstant.QUERY_LATEST_VERSION, null, postParams(1).getBytes());
 
-        } else {
-            showNoNetWorkDlg(MainActivity.this);
-        }
+
     }
 
     /**
@@ -579,32 +359,6 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
         }
     }
 
-
-    /**
-     * 广播接收器
-     *
-     * @author len
-     */
-    public class MsgReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //拿到进度，更新UI
-            int progress = intent.getIntExtra("progress", 0);
-            if (ll_main_xiazai.getVisibility() == View.VISIBLE) {
-
-            } else {
-                ll_main_xiazai.setVisibility(View.VISIBLE);
-
-            }
-            downloadprogress = progress;
-            Message msg = new Message();
-            msg.what = 1;
-            handler.sendMessage(msg);
-        }
-
-    }
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -625,12 +379,12 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
                 break;
             }
         }
-        editor.putString("province", province);
-        editor.putString("city", city);
-        editor.putString("district", district);
-        editor.commit();
+//        editor.putString("province", province);
+//        editor.putString("city", city);
+//        editor.putString("district", district);
+//        editor.commit();
 
-        if (preference.getBoolean("isFirst", true)) {
+        if (getSharedPreferences("data", MODE_PRIVATE).getBoolean("isFirst", true)) {
             //第一次安装，跳转到引导页
             Intent intent = new Intent(MainActivity.this, GuideActivity.class);
             startActivity(intent);

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.ouzhongiot.ozapp"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 562
         versionName "5.6.2"

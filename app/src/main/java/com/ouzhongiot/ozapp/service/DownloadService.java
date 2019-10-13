@@ -134,7 +134,7 @@ public class DownloadService extends Service {
         if (intent != null) {
             apkUrl = intent.getStringExtra("apkurl");
             savePath = FileTool.getPath2(mContext, "SavaAPK");
-            saveFileName = savePath + "联侠智能.apk";
+            saveFileName = savePath + "微新风智能.apk";
             startDownLoadAPK();
         }
 
