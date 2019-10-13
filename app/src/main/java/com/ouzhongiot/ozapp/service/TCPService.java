@@ -74,8 +74,8 @@ public class TCPService extends Service {
 
         builder.setContentIntent(PendingIntent.
                 getActivity(this, 0, nfIntent, 0))
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.icon_bule))
-                .setSmallIcon(R.mipmap.icon_bule).setContentText("")
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.mipmap.icon_blue))
+                .setSmallIcon(R.mipmap.icon_blue).setContentText("")
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle("微新风运行中");
         // 设置PendingIntent

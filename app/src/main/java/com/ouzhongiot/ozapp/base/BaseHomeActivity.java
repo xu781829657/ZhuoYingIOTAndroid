@@ -3,6 +3,7 @@ package com.ouzhongiot.ozapp.base;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
+import android.view.WindowManager;
 
 public abstract class BaseHomeActivity extends FragmentActivity {
 

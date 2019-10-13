@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.ouzhongiot.ozapp.Model.MachineBean;
 import com.ouzhongiot.ozapp.OZApplication;
 import com.ouzhongiot.ozapp.R;
@@ -17,6 +19,7 @@ import com.ouzhongiot.ozapp.constant.UrlConstant;
 import com.ouzhongiot.ozapp.http.ConnectDataTask;
 import com.ouzhongiot.ozapp.http.HcNetWorkTask;
 import com.ouzhongiot.ozapp.tools.LogManager;
+import com.ouzhongiot.ozapp.tools.StringUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +42,7 @@ public class MachineTypeListActivity extends BaseHomeActivity implements Connect
     private MachineTypeListAdapter mAdapter;
 
     private List<MachineBean> machineLists;
-    private JSONArray typeArray;
+    private JSONArray typeArray = new JSONArray();
 
     private ImageView img_guide2;
     public static final String PARAM_SWITCH_TYPE = "param_switch_type";//区分是“添加设备”还是“展示列表”
@@ -107,7 +110,16 @@ public class MachineTypeListActivity extends BaseHomeActivity implements Connect
                 if (code == 2) {
                     //查询所有类型
                     if (state == 0) {
-                        typeArray = object.getJSONArray("data");
+                        JSONArray data = object.getJSONArray("data");
+                        for (int i = 0; i < data.length(); i++) {
+                            JSONObject jsonObject = data.getJSONObject(i);
+                            LogManager.d("jsonObject:" + jsonObject.toString());
+                            String typeName = jsonObject.getString("typeName");
+                            if (StringUtils.isEquals(typeName,"空气净化器")) {
+                                typeArray.put(jsonObject);
+                                break;
+                            }
+                        }
                         mAdapter = new MachineTypeListAdapter(this, typeArray);
                         mListView.setAdapter(mAdapter);
                         mListView.setOnItemClickListener(this);

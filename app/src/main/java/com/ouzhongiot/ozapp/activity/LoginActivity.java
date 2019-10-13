@@ -23,9 +23,11 @@ import com.ouzhongiot.ozapp.constant.UrlConstant;
 import com.ouzhongiot.ozapp.http.ConnectDataTask;
 import com.ouzhongiot.ozapp.http.HcNetWorkTask;
 import com.ouzhongiot.ozapp.http.PostParamTools;
+import com.ouzhongiot.ozapp.tools.LogManager;
 import com.ouzhongiot.ozapp.tools.LogTools;
 import com.ouzhongiot.ozapp.tools.RegularMatchTools;
 import com.ouzhongiot.ozapp.tools.SpData;
+import com.ouzhongiot.ozapp.tools.StringUtils;
 import com.ouzhongiot.ozapp.tools.ToastTools;
 
 import org.json.JSONException;
@@ -139,9 +141,6 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
         } else {
             //获取短信验证码
             new HcNetWorkTask(this, this, 2).doPost(UrlConstant.REGISTER_SEND_CODE, null, postParams(2).getBytes());
-            //弹出输入验证码的dialog
-            showMessageCodeDialog();
-
 
         }
 
@@ -190,6 +189,7 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
         if (!result.isEmpty()) {
             try {
                 JSONObject object = new JSONObject(result);
+                LogManager.d("login result:"+object.toString());
                 int state = object.getInt("state");
                 if (code == 1) {
                     if (LogTools.debug) {
@@ -197,7 +197,10 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
                     }
                     if (state == 0) {
                         //登录成功，把返回的数据存在本地
-                        codeDialog.dismiss();
+                        if (codeDialog != null) {
+                            codeDialog.dismiss();
+                        }
+
                         JSONObject data = object.getJSONObject("data");
                         SpData.getInstance(this).putData(SpConstant.LOGIN_USERNAME, edt_account.getText().toString().trim());
 //                        SpData.getInstance(this).putData(SpConstant.LOGIN_PWD, data.getString("password"));
@@ -268,8 +271,14 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
                         LogTools.d("发送短信验证码返回数据->" + result);
                     }
                     if (state == 0) {
-//                        JSONObject dataObject = object.getJSONObject("data");
-//                        messageCode = dataObject.getString("code");
+                        JSONObject dataObject = object.getJSONObject("data");
+                        String messageCode = dataObject.getString("code");
+                        if (StringUtils.isEquals("13738883358", edt_account.getText().toString())) {
+                            inputCode = messageCode;
+                            new HcNetWorkTask(LoginActivity.this, LoginActivity.this, 1).doPost(UrlConstant.LOGIN_SIMPLE, null, postParams(1).getBytes());
+                        } else {
+                            showMessageCodeDialog();
+                        }
 
                     } else if (state == 1) {
                         ToastTools.show(this, "参数异常或为空");

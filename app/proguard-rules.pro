@@ -205,3 +205,6 @@
 #-dontwarn com.igexin.**
 #-keep class com.igexin.** { *; }
 #-keep class org.json.** { *; }
+
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}

@@ -23,6 +23,7 @@ import com.ouzhongiot.ozapp.constant.SpConstant;
 import com.ouzhongiot.ozapp.tools.SocketOrderTools;
 import com.ouzhongiot.ozapp.tools.SpData;
 import com.ouzhongiot.ozapp.tools.SystemTools;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.io.File;
 import java.io.IOException;
@@ -38,7 +39,7 @@ import java.util.Stack;
  */
 public class OZApplication  extends Application{
     public OutputStream outputStream;
-    public LocationService locationService;
+    //public LocationService locationService;
     public Vibrator mVibrator;
     public byte[] heartbyte = new byte[8];
     public  String msg = "";
@@ -99,7 +100,7 @@ public class OZApplication  extends Application{
         /***
          * 初始化定位sdk，建议在Application中创建
          */
-        locationService = new LocationService(getApplicationContext());
+       // locationService = new LocationService(getApplicationContext());
         mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
         WriteLog.getInstance().init(); // 初始化日志
         SDKInitializer.initialize(getApplicationContext());
@@ -116,6 +117,8 @@ public class OZApplication  extends Application{
 //        });
         initImageLoader(getApplicationContext());
 
+
+        CrashReport.initCrashReport(getApplicationContext(), "1c88c987fb", false);
 
     }
 
