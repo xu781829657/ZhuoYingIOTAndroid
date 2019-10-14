@@ -220,10 +220,6 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
         //启动tcp服务
         Intent intent = new Intent(this, TCPService.class);
         startService(intent);
-
-
-
-
     }
 
     /**

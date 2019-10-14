@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ouzhongiot.ozapp">
     <!-- 解决Android L上通知显示异常问题，targetSdkVersion需要设置成22 -->
-    <uses-sdk
-        android:minSdkVersion="9"
-        android:targetSdkVersion="22" />
 
     <!-- 个推SDK权限配置开始 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -42,6 +39,8 @@
     <!-- 个推3.0电子围栏功能所需权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 
     <application

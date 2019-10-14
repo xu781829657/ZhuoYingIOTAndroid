@@ -1,21 +1,31 @@
 package com.ouzhongiot.ozapp.activity;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.master.permissionhelper.PermissionHelper;
 import com.ouzhongiot.ozapp.OZApplication;
 import com.ouzhongiot.ozapp.R;
 import com.ouzhongiot.ozapp.base.BaseHomeActivity;
 import com.ouzhongiot.ozapp.tools.IconfontTools;
+import com.ouzhongiot.ozapp.tools.LogManager;
 import com.ouzhongiot.ozapp.tools.LogTools;
 import com.ouzhongiot.ozapp.tools.ToastTools;
 
@@ -66,19 +76,57 @@ public class AddMachineWifiActivity extends BaseHomeActivity implements View.OnC
         tv_back_behind.setText(getString(R.string.txt_back));
         tv_title.setText(getString(R.string.txt_add_machine_wifi_title));
         socket = ((OZApplication) getApplication()).socket;
-        //获取wifi账号
-        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
-        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-        wifiName = wifiInfo.getSSID().substring(1, wifiInfo.getSSID().length() - 1);
-        if (LogTools.debug) {
-            LogTools.i("wifiName->" + wifiName);
+//        //获取wifi账号
+//        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+//        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+//        wifiName = wifiInfo.getSSID().substring(1, wifiInfo.getSSID().length() - 1);
+//        if (LogTools.debug) {
+//            LogTools.i("wifiName->" + wifiName);
+//        }
+
+        if (Build.VERSION.SDK_INT >= 28) {
+            showRequestPermissionDialog();
+            //requestPOSPermission();
+        } else {
+            setWifiName();
         }
-        //设置wifi账号
-        tv_wifi_name.setText(wifiName);
+
         //设置点击事件
         setClick();
 
+    }
 
+    private void showRequestPermissionDialog(){
+        //创建dialog构造器
+        final AlertDialog.Builder dialog  = new AlertDialog.Builder(this);
+        //设置title
+        dialog.setTitle("提示");
+        //设置内容
+        dialog.setMessage("9.0以上系统获取wifi名称,需要开启定位权限");
+        //设置按钮
+        dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        dialog.setPositiveButton("去授权"
+                , new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        requestPOSPermission();
+                        dialog.dismiss();
+                    }
+                });
+        //创建并显示
+        dialog.create().show();
+  }
+
+    public void setWifiName(){
+        wifiName = getWIFISSID(this);
+        LogManager.d("wifiName2:" + wifiName);
+        //设置wifi账号
+        tv_wifi_name.setText(wifiName);
     }
 
     public void setClick() {
@@ -145,5 +193,74 @@ public class AddMachineWifiActivity extends BaseHomeActivity implements View.OnC
                 startActivity(intent);
             }
         }).setNegativeButton(getString(R.string.txt_add_machine_wifi_nonetwork_know), null).show();
+    }
+
+
+    /**
+     * 获取SSID
+     * https://blog.csdn.net/Marvinhq/article/details/83957553
+     * @param activity 上下文
+     * @return  WIFI 的SSID
+     */
+    public String getWIFISSID(Activity activity) {
+        String ssid="unknown id";
+        LogManager.d("getWIFISSID:"+Build.VERSION.SDK_INT);
+        //<8.0(26) || 9.0(28)
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O || Build.VERSION.SDK_INT == 28) {
+
+            WifiManager mWifiManager = (WifiManager) activity.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+            assert mWifiManager != null;
+            WifiInfo info = mWifiManager.getConnectionInfo();
+
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                return info.getSSID();
+            } else {
+                return info.getSSID().replace("\"", "");
+            }
+        } else if (Build.VERSION.SDK_INT == 27) {//8.1
+
+            ConnectivityManager connManager = (ConnectivityManager) activity.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            assert connManager != null;
+            NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
+            if (networkInfo.isConnected()) {
+                if (networkInfo.getExtraInfo() != null) {
+                    return networkInfo.getExtraInfo().replace("\"", "");
+                }
+            }
+        }
+
+
+        return ssid;
+    }
+
+    private PermissionHelper permissionHelper;
+
+    private void requestPOSPermission() {
+        permissionHelper = new PermissionHelper(AddMachineWifiActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
+        permissionHelper.request(new PermissionHelper.PermissionCallback() {
+            @Override
+            public void onPermissionGranted() {
+                LogManager.d("onPermissionGranted");
+                setWifiName();
+            }
+
+            @Override
+            public void onIndividualPermissionGranted(String[] grantedPermission) {
+                LogManager.d("onIndividualPermissionGranted");
+            }
+
+            @Override
+            public void onPermissionDenied() {
+                LogManager.d("onPermissionDenied");
+                Toast.makeText(AddMachineWifiActivity.this, "权限被拒绝，9.0系统无法获取SSID", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPermissionDeniedBySystem() {
+                LogManager.d("onPermissionDeniedBySystem");
+                Toast.makeText(AddMachineWifiActivity.this, "权限被拒绝，9.0系统无法获取SSID", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

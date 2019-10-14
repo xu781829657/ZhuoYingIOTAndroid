@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
         applicationId "com.zhuoying.iot"
-        minSdkVersion 19
-        targetSdkVersion 23
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 562
         versionName "5.6.2"
         buildConfigField("boolean", "LOG", "true")
@@ -67,27 +68,22 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/license.txt'
     }
-
-    productFlavors {
-        web {
-
-        }
-    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.getui:sdk:2.10.2.0'
-    compile 'com.android.support:support-v4:23.3.0'
-    compile files('libs/volly-1.0.11.jar')
-    compile files('libs/universal-image-loader-1.9.5.jar')
-    compile 'in.srain.cube:ptr-load-more:1.0.5'
-    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
-    compile 'com.alibaba:fastjson:1.1.55.android'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    api "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation 'com.getui:sdk:2.10.2.0'
+    api "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    implementation files('libs/volly-1.0.11.jar')
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+    implementation 'in.srain.cube:ptr-load-more:1.0.5'
+    implementation 'com.google.android.gms:play-services-appindexing:8.4.0'
+    implementation 'com.alibaba:fastjson:1.1.55.android'
 
-    compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
-    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    api  'com.master.android:permissionhelper:2.0'
 
 }
