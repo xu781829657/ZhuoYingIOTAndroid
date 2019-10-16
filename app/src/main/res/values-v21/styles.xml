@@ -1,0 +1,23 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- OS 5.0 -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <!-- 启动页样式 -->
+    <style name="WelComeAcTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_default_bg</item>
+        <!--<item name="android:windowBackground">@mipmap/splash</item>-->
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+
+</resources>

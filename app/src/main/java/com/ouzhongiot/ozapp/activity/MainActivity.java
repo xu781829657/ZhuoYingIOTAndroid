@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
@@ -102,15 +104,21 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
         setContentView(R.layout.activity_main);
         OZApplication.getInstance().addActivity(this);
         initWidgets();
-        mHandler.post(new Runnable() {
+        mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 initData();
             }
-        });
+        },1000);
 
     }
     private void initWidgets(){
@@ -363,18 +371,18 @@ public class MainActivity extends AppCompatActivity implements ConnectDataTask.O
 
     //不需要版本更新
     public void next() {
-        int i1 = 0;
-        while (city == null) {
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            i1++;
-            if (i1 > 5) {
-                break;
-            }
-        }
+//        int i1 = 0;
+////        while (city == null) {
+////            try {
+////                Thread.sleep(300);
+////            } catch (InterruptedException e) {
+////                e.printStackTrace();
+////            }
+////            i1++;
+////            if (i1 > 5) {
+////                break;
+////            }
+////        }
 //        editor.putString("province", province);
 //        editor.putString("city", city);
 //        editor.putString("district", district);

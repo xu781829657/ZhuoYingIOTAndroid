@@ -49,10 +49,12 @@
         android:icon="@mipmap/icon_blue"
         android:label="@string/app_name"
         android:largeHeap="true"
+        android:resizeableActivity="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.MainActivity"
+            android:theme="@style/WelComeAcTheme"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -391,6 +393,7 @@
         <service android:name="com.ouzhongiot.ozapp.service.PushIntentService"/>
 
         <meta-data android:name="android.max_aspect" android:value="2.4" />
+        <meta-data android:name="android.notch_support" android:value="true"/>
     </application>
 
 </manifest>

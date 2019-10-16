@@ -1,0 +1,17 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- OS 6.0 -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <!-- 顶部状态栏背景色 方法一 -->
+        <item name="android:colorPrimaryDark">@color/white</item>
+        <!--顶部状态栏背景色 兼容方法 默认colorPrimaryDark，这里用作兼容乐视手机-->
+        <item name="android:statusBarColor">@color/white</item>
+        <!--V23+状态栏是浅色时，状态栏文字自动、设置为黑色-->
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+
+</resources>

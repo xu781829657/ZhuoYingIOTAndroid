@@ -124,7 +124,7 @@ public class MymachineFragment extends BaseHomeFragment implements ConnectDataTa
     }
 
     public void requestMyMachineList() {
-        new HcNetWorkTask(getActivity(), this, 1).doPost(UrlConstant.QUERY_USER_DEVICE, null, postParams(1).getBytes());
+        new HcNetWorkTask(getActivity(), this, 1,false).doPost(UrlConstant.QUERY_USER_DEVICE, null, postParams(1).getBytes());
     }
 
     public void requestWeather() {
