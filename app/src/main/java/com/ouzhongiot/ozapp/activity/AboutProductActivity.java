@@ -90,7 +90,7 @@ public class AboutProductActivity extends BaseHomeActivity implements View.OnCli
                 break;
             case R.id.llayout_update_log:
                 //更新日志
-                startActivity(new Intent(this, gengxinrizhi.class));
+               // startActivity(new Intent(this, gengxinrizhi.class));
                 break;
         }
 

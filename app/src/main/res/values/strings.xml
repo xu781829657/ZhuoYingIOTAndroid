@@ -94,7 +94,7 @@
 
     <!--注册-->
     <string name="register_txt">注册</string>
-    <string name="register_remind_txt">点击“立即注册”，即表示您已同意遵守欧众</string>
+    <string name="register_remind_txt">点击“注册”，即表示您已同意</string>
     <string name="register_agreement_txt">用户协议</string>
     <string name="register_and_txt"> 和 </string>
     <string name="register_policy_txt">隐私政策</string>

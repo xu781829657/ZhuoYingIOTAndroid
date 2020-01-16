@@ -26,6 +26,8 @@ public class AboutUsActivity extends BaseHomeActivity implements View.OnClickLis
     private TextView tv_version_code;//版本号
     private LinearLayout llayout_go_evaluate;//去评价
     private LinearLayout llayout_contact_us;//联系我们
+    private LinearLayout llayout_user_agreement;
+    private LinearLayout llayout_policy;
 
     @Override
     public int addContentView() {
@@ -41,6 +43,8 @@ public class AboutUsActivity extends BaseHomeActivity implements View.OnClickLis
         tv_version_code = (TextView) findViewById(R.id.tv_version_code);
         llayout_go_evaluate = (LinearLayout) findViewById(R.id.llayout_go_evaluate);
         llayout_contact_us = (LinearLayout) findViewById(R.id.llayout_contact_us);
+        llayout_user_agreement = (LinearLayout) findViewById(R.id.llayout_user_agreement);
+        llayout_policy = (LinearLayout) findViewById(R.id.llayout_policy);
 
     }
 
@@ -60,6 +64,8 @@ public class AboutUsActivity extends BaseHomeActivity implements View.OnClickLis
         llayout_back.setOnClickListener(this);
         llayout_go_evaluate.setOnClickListener(this);
         llayout_contact_us.setOnClickListener(this);
+        llayout_user_agreement.setOnClickListener(this);
+        llayout_policy.setOnClickListener(this);
 
     }
 
@@ -77,6 +83,14 @@ public class AboutUsActivity extends BaseHomeActivity implements View.OnClickLis
             case R.id.llayout_contact_us:
                 //联系我们
                 startActivity(new Intent(this, ContactUsActivity.class));
+                break;
+            case R.id.llayout_user_agreement:
+                //联系我们
+                startActivity(new Intent(this, UserAgreementActivity.class));
+                break;
+            case R.id.llayout_policy:
+                //联系我们
+                startActivity(new Intent(this, PolicyActivity.class));
                 break;
         }
 

@@ -48,6 +48,8 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
     private Button btn_login;//登录
     private Button btn_forget_pwd;//忘记密码
     private Button btn_register;//注册
+    private TextView tv_user_agree;//用户协议
+    private TextView tv_policy;//隐私政策
 
     private Button btn_code_resend;
     EditText edt1, edt2, edt3, edt4, edt5, edt6;
@@ -68,6 +70,8 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_forget_pwd = (Button) findViewById(R.id.btn_login_forget_pwd);
         btn_register = (Button) findViewById(R.id.btn_login_immediately_register);
+        tv_user_agree = (TextView) findViewById(R.id.tv_register_agreement);
+        tv_policy = (TextView) findViewById(R.id.tv_register_policy);
 
     }
 
@@ -85,6 +89,8 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
         btn_login.setOnClickListener(this);
         btn_forget_pwd.setOnClickListener(this);
         btn_register.setOnClickListener(this);
+        tv_user_agree.setOnClickListener(this);
+        tv_policy.setOnClickListener(this);
 
     }
 
@@ -104,8 +110,15 @@ public class LoginActivity extends BaseHomeActivity implements View.OnClickListe
                 //立即注册
                 startActivity(new Intent(this, RegisterActivity2.class));
                 break;
-
-        }
+            case R.id.tv_register_agreement:
+                Intent intent = new Intent(this, UserAgreementActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tv_register_policy:
+                Intent intent2 = new Intent(this, PolicyActivity.class);
+                startActivity(intent2);
+                break;
+            }
     }
 
     //登录前的验证

@@ -7,7 +7,7 @@ public class LogManager {
 
     public static final String TAG = "wxf";
 
-    public static boolean isLogOpen = true;
+    public static boolean isLogOpen = false;
 
     public static void initALog(Context argContext, boolean argIsLogOpen) {
 
